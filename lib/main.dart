@@ -35,7 +35,10 @@ class MyHomePage extends StatelessWidget {
         title: Text(''),
       ),
       body: Center(
-        child: BlocBuilder<CounterCubit, CounterState>(
+        child: BlocConsumer<CounterCubit, CounterState>(
+          listener: (context, state) {
+            // add state her
+          },
           builder: (context, state) {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -56,14 +59,14 @@ class MyHomePage extends StatelessWidget {
           FloatingActionButton(
             onPressed: context.read<CounterCubit>().increamentCount,
             tooltip: 'Increment',
-            child: const Icon(Icons.add),
+            child: const Icon(Icons.add, color: Colors.green),
           ),
           SizedBox(height: 10),
           //
           FloatingActionButton(
             onPressed: context.read<CounterCubit>().decreamentCount,
             tooltip: 'decrement',
-            child: const Icon(Icons.remove),
+            child: const Icon(Icons.remove, color: Colors.red),
           ),
         ],
       ),
