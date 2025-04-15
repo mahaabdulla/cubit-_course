@@ -12,5 +12,5 @@ final class CounterInitial extends CounterState {
 }
 
 class CounterUpdate extends CounterState {
-  emit(CounterUpdate(super.count));
+  CounterUpdate(super.count);
 }
