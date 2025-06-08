@@ -41,4 +41,12 @@ cd cubit-_course
 
 flutter run
 
+📌 Requirements
+
+    Flutter SDK
+
+    Dart
+
+    flutter_bloc package
+
 
