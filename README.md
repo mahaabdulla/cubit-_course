@@ -49,4 +49,8 @@ flutter run
 
     flutter_bloc package
 
+🚧 Work in Progress
+
+The project will continue to grow with more examples and comparisons between Cubit and Bloc implementations.
+
 
