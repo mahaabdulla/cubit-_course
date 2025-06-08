@@ -1,8 +1,7 @@
 //
 
 sealed class CounterState {
-  // ليش مررناه عشان يكون عندي حالة واحدة بس اتحكم فيها
-  final int count;
+  final int count; // ليش مررناه عشان يكون عندي حالة واحدة بس اتحكم فيها
   CounterState(this.count);
 }
 
