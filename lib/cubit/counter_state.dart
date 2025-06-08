@@ -1,16 +1,15 @@
-part of 'counter_cubit.dart';
+//
 
-@immutable
 sealed class CounterState {
+  // ليش مررناه عشان يكون عندي حالة واحدة بس اتحكم فيها
   final int count;
-
   CounterState(this.count);
 }
 
-final class CounterInitial extends CounterState {
-  CounterInitial() : super(0);
+class CounterInit extends CounterState {
+  CounterInit() : super(0);
 }
 
-class CounterUpdate extends CounterState {
-  CounterUpdate(super.count);
+class CounterUpdare extends CounterState {
+  CounterUpdare(super.count);
 }
