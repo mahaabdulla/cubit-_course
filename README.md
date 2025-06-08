@@ -35,4 +35,10 @@ cd cubit-_course
 
 3- Install dependencies:
 
+4- flutter pub get
+
+5- Run the app:
+
+flutter run
+
 
