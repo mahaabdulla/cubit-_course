@@ -6,7 +6,6 @@ class CounterCubit extends Cubit<CounterState> {
     : super(CounterInit()); // أول ما ينشئ  objct يعطيه الحالة ال init
 
   // the cubit provid [state] يجيب اخر حالة   state.count == last state
-
   // emit  => Stream that tell ui there is a New State
   void increamentCount() => emit(CounterUpdare(state.count + 1));
 
