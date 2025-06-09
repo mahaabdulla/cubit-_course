@@ -29,45 +29,46 @@ class MyHomePage extends StatelessWidget {
     print("Build");
     dev.log("Build start");
 
-    return BlocBuilder<CounterCubit, CounterState>(
-      builder: (context, state) {
-        return Scaffold(
-          appBar: AppBar(
-            backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          ),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const Text('You have pushed the button this many times:'),
-                Text(
+    dev.log('Build child');
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text('You have pushed the button this many times:'),
+            BlocBuilder<CounterCubit, CounterState>(
+              builder: (context, state) {
+                return Text(
                   state.count.toString(),
                   style: Theme.of(context).textTheme.headlineMedium,
-                ),
-              ],
+                );
+              },
             ),
+          ],
+        ),
+      ),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              context.read<CounterCubit>().increamentCount();
+            },
+            child: const Icon(Icons.add, color: Colors.green),
           ),
-          floatingActionButton: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              FloatingActionButton(
-                onPressed: () {
-                  context.read<CounterCubit>().increamentCount();
-                },
-                child: const Icon(Icons.add, color: Colors.green),
-              ),
-              SizedBox(height: 10),
-              FloatingActionButton(
-                onPressed: () {
-                  context.read<CounterCubit>().decreamentCount();
-                },
-                tooltip: 'decrement',
-                child: const Icon(Icons.remove, color: Colors.red),
-              ),
-            ],
+          SizedBox(height: 10),
+          FloatingActionButton(
+            onPressed: () {
+              context.read<CounterCubit>().decreamentCount();
+            },
+            tooltip: 'decrement',
+            child: const Icon(Icons.remove, color: Colors.red),
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 }
