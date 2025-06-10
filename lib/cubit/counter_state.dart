@@ -6,7 +6,7 @@ sealed class CounterState {
 }
 
 class CounterInit extends CounterState {
-  CounterInit() : super(199);
+  CounterInit() : super(0);
 }
 
 class CounterUpdare extends CounterState {

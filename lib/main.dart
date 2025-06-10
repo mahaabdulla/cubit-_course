@@ -39,10 +39,10 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text('You have pushed the button this many times:'),
-            BlocBuilder<CounterCubit, CounterState>(
+            BlocBuilder<CounterCubit, String>(
               builder: (context, state) {
                 return Text(
-                  state.count.toString(),
+                  state.toString(),
                   style: Theme.of(context).textTheme.headlineMedium,
                 );
               },
