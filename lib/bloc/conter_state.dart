@@ -1,6 +1,14 @@
-part of 'conter_bloc.dart';
+//
 
-@immutable
-sealed class ConterState {}
+sealed class CounterState {
+  final int count; // ليش مررناه ؟ عشان يكون عندي حالة واحدة بس اتحكم فيها
+  CounterState(this.count);
+}
 
-final class ConterInitial extends ConterState {}
+class CounterInit extends CounterState {
+  CounterInit() : super(0);
+}
+
+class CounterUpdare extends CounterState {
+  CounterUpdare(super.count);
+}
