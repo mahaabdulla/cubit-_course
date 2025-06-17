@@ -26,14 +26,14 @@ class MyHomePage extends StatelessWidget {
   MyHomePage({super.key, required this.title});
 
   final String title;
-  UserModel userl = UserModel(1, 'maha');
-  UserModel user2 = UserModel(1, 'maha');
+  // UserModel userl = UserModel(1, 'maha');
+  // UserModel user2 = UserModel(1, 'maha');
 
   @override
   Widget build(BuildContext context) {
-    print(userl.hashCode == user2.hashCode);
-    print(userl.hashCode);
-    print(user2.hashCode);
+    // print(userl.hashCode == user2.hashCode);
+    // print(userl.hashCode);
+    // print(user2.hashCode);
     print("Build");
     dev.log("Build start");
 
@@ -49,6 +49,7 @@ class MyHomePage extends StatelessWidget {
             const Text('You have pushed the button this many times:'),
             BlocBuilder<CounterCubit, CounterState>(
               builder: (context, state) {
+                print('state: ${state.count}');
                 return Text(
                   state.count.toString(),
                   style: Theme.of(context).textTheme.headlineMedium,

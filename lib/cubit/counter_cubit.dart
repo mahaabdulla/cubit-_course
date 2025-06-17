@@ -8,7 +8,7 @@ class CounterCubit extends Cubit<CounterState> {
 
   // the cubit provid [state] يجيب اخر حالة   state.count == last state
   // emit  => Stream that tell ui there is a New State
-  void increamentCount() => emit(CounterUpdare(state.count + 1));
+  void increamentCount() => emit(CounterUpdare(5));
 
-  void decreamentCount() => emit(CounterUpdare(state.count - 1));
+  void decreamentCount() => emit(CounterUpdare(5));
 }
